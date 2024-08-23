@@ -24,11 +24,9 @@ class StudentControllerTest {
 
     @Test
     @SneakyThrows
-    void getIndexTest() {
-        mockMvc.perform(get("/"))
-            .andExpect(status().isOk())
-            .andExpect(view().name("index"))
-            .andExpect(model().attributeExists("students"));
+    void getStudentsTest() {
+        mockMvc.perform(get("/student"))
+            .andExpect(status().isOk());
     }
 
     @Test

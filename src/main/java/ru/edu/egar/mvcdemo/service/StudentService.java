@@ -15,6 +15,7 @@ public class StudentService {
     private final StudentRepository repository;
     private final StudentRepository studentRepository;
 
+    @Transactional
     public void saveStudent(Student student) {
         repository.save(student);
     }
@@ -27,9 +28,15 @@ public class StudentService {
         Optional<Student> foundPerson = studentRepository.findById(id);
         return foundPerson.orElse(null);
     }
+
     @Transactional
     public void update(long id, Student updatedStudent) {
         updatedStudent.setId(id);
         studentRepository.save(updatedStudent);
+    }
+
+    @Transactional
+    public void deleteById(Long id) {
+        studentRepository.deleteById(id);
     }
 }
