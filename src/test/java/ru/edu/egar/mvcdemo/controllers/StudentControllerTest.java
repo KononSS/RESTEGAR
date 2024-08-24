@@ -1,4 +1,4 @@
-package ru.edu.egar.mvcdemo.controller;
+package ru.edu.egar.mvcdemo.controllers;
 
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
@@ -10,7 +10,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
-import ru.edu.egar.mvcdemo.service.StudentService;
+import ru.edu.egar.mvcdemo.services.StudentService;
 
 @WebMvcTest(StudentController.class)
 class StudentControllerTest {

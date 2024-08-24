@@ -1,4 +1,4 @@
-package ru.edu.egar.mvcdemo.service;
+package ru.edu.egar.mvcdemo.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -30,9 +30,16 @@ public class StudentService {
     }
 
     @Transactional
-    public void update(long id, Student updatedStudent) {
-        updatedStudent.setId(id);
+    public Optional<Student> update(long id, Student updatedStudent) {
+        Optional<Student> student = studentRepository.findById(id);
+        if (student.isPresent()){
+        student.get().setLastName(updatedStudent.getLastName());
+        student.get().setFirstName(updatedStudent.getFirstName());
+        student.get().setPhone(updatedStudent.getPhone());
+        student.get().setAge(updatedStudent.getAge());
         studentRepository.save(updatedStudent);
+        }
+        return student;
     }
 
     @Transactional
