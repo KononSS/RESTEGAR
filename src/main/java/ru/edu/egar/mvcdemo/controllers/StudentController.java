@@ -2,7 +2,6 @@ package ru.edu.egar.mvcdemo.controllers;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.edu.egar.mvcdemo.entity.Student;
 import ru.edu.egar.mvcdemo.services.StudentService;
